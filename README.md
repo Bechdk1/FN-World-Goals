@@ -1,16 +1,43 @@
-# React + Vite
+# FN World Goals
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+School project: React + Vite.
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+cp .env.example .env   # optional — 4000 is the default either way
+npm run dev
+```
 
-## React Compiler
+The app runs on http://localhost:4000/.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Scripts
 
-## Expanding the Oxlint configuration
+| Script | What it does |
+| --- | --- |
+| `npm run dev` | Dev server with HMR on port 4000 |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Serves the built `dist/` on port 4000 |
+| `npm run lint` | ESLint over the project |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Configuration
+
+`vite.config.js` reads `.env` through Vite's `loadEnv` and takes `PORT` from it,
+falling back to 4000. `strictPort` is on, so a busy port fails loudly instead of
+silently moving the app somewhere else.
+
+`.env` is git-ignored; `.env.example` is the tracked template. Only variables
+prefixed `VITE_` reach the browser (as `import.meta.env.VITE_*`) — never put a
+secret in one, it ships in the bundle.
+
+## Linting
+
+ESLint 10 with flat config in `eslint.config.js`, using the `react-hooks` and
+`react-refresh` plugins. The Vite template ships oxlint by default; this project
+uses ESLint instead.
+
+Note that Oxc still appears in the dependency tree, in a different role: Vite 8
+bundles with Rolldown, which uses Oxc as its parser, and `@vitejs/plugin-react`
+uses Oxc for the Fast Refresh transform. That is the build pipeline, not linting,
+and it is unrelated to the oxlint/ESLint choice.
