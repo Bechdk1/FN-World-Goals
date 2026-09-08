@@ -5,14 +5,17 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./styled/Global";
 import { theme } from "./styled/Theme";
 import App from "./App";
+import { ThemeContextProvider } from "./Context/ThemeContext";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeProvider>
+    <ThemeContextProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ThemeProvider>
+    </ThemeContextProvider>
   </StrictMode>,
 );

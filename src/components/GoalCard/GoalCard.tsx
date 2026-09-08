@@ -2,10 +2,10 @@ import type { GoalCardProps } from "../../types/types";
 import { GoalCardStyled } from "./GoalCard.styled";
 import parse from "html-react-parser";
 
-export const GoalCard = ({ number, title, color, icon }: GoalCardProps) => (
+export const GoalCard = ({ id, title, color, icon }: GoalCardProps) => (
   <GoalCardStyled color={color}>
-    <div>{number}</div>
+    <div>{id}</div>
     <div>{title}</div>
-    <div>{parse(icon)}</div>
+    <div>{icon ? parse(icon) : null}</div>
   </GoalCardStyled>
 );

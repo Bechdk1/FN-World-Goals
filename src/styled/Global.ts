@@ -7,10 +7,15 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Open Sans', Arial, Verdana, sans-serif;
         font-size: 1rem;
         color: #333333;
+        
+        &.dark-mode {   
+            background-color: ${({ theme }) => theme.colors.dark.background};
+            color: ${({ theme }) => theme.colors.dark.text};
+        }
     }
 
-    .dark-mode {
-        background-color: #333;
+    main {
+            
     }
 
     h1 {

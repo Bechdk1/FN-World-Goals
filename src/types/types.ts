@@ -55,7 +55,7 @@ export type FieldProps = InputProps & {
 };
 
 export type GoalProps = {
-  number: number;
+  id: number;
   title: string;
   color: string;
   icon: string;
@@ -63,6 +63,7 @@ export type GoalProps = {
 
 export type GoalCardProps = GoalProps & {
   className?: string;
+  children?: React.ReactNode;
 };
 
 export type NavLinkItemProps = {
@@ -101,3 +102,30 @@ type FAQProps = {
 };
 
 export type FAQResponseProps = FAQProps[];
+
+type GoalListProps = {
+  id: number;
+  title: string;
+  byline?: string;
+  color: string;
+  icon: string;
+};
+
+export type GoalListResponse = GoalListProps[];
+
+export type ThemeContextProps = {
+  darkMode: boolean;
+  toggleTheme: () => void;
+};
+
+export type ProviderProps = {
+  children: React.ReactNode;
+};
+
+export type ButtonProps = {
+  textValue?: string;
+  className?: string;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  children?: React.ReactNode;
+};

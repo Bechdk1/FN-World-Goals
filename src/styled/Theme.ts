@@ -4,7 +4,18 @@ export const theme = {
     secondary: "#EDEDED",
     tertiary: "#03689C",
     grey: "#efefef",
+
+    light: {
+      background: "#ededed",
+      text: "#222222",
+    },
+
+    dark: {
+      background: "#1e1e1e",
+      text: "#ededed",
+    },
   },
+
   fonts: ["Oswald", "Open Sans"],
   fontsizes: {
     xs: "0.8rem",

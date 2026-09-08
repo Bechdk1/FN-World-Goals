@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Container } from "../../components/Container/Container";
 
-export const GoalGrid = styled(Container)`
+export const GoalListStyled = styled(Container)`
   background-color: ${(props) => props.theme.colors.grey};
   display: grid;
   grid-template-columns: repeat(6, 1fr);

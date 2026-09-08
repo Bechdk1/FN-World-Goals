@@ -9,6 +9,7 @@ import {
   HeaderNavList,
 } from "./HeaderModule.styled";
 import { Container } from "../../components/Container/Container";
+import { ThemeToggleButton } from "../../components/Button/ThemeToggleButton";
 
 export const HeaderModule = () => {
   return (
@@ -25,6 +26,7 @@ export const HeaderModule = () => {
             ))}
           </HeaderNavList>
         </HeaderNav>
+        <ThemeToggleButton />
       </Container>
     </Header>
   );
